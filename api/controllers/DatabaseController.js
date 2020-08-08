@@ -284,7 +284,7 @@ module.exports = {
           increase
         );
         res05.view("pages/redirect", {
-          data05: "Qoh Increase Request is made to Parts Company",
+          data05: "Increase Stock Request is made to Parts Company",
         });
       }
     }
