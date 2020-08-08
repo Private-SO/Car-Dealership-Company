@@ -183,6 +183,7 @@ module.exports = {
                 partOrdersPost.jobName05 = req05.body.jobName05;
                 partOrdersPost.userId05 = userid;
                 partOrdersPost.qty = req05.body.qty05;
+                partOrdersPost.transactionId05 = trasnsactionId;
 
                 await postData05(
                   "https://e0o6yn652b.execute-api.us-east-1.amazonaws.com/Dev/addsuccessjobs",
@@ -196,7 +197,7 @@ module.exports = {
 
                 res05.view("pages/redirect", {
                   data05:
-                    "Order is successful.Company X and Company Y have received the update",
+                    "Order is successful.Car Parts Company and Car Assembly company have received the update",
                 });
               } else {
                 let rollBackBody = {};
