@@ -93,7 +93,7 @@ module.exports = {
       console.log(req05.body.orderType05);
       if (req05.body.orderType05 === "One") {
         let response05 = await getData05(
-          "http://projectcloud-env.eba-6saqrkmu.us-east-1.elasticbeanstalk.com/getPartsByID/" +
+          "http://projectcloud-env.XXX.us-east-1.elasticbeanstalk.com/getPartsByID/" +
             req05.body.partId05 +
             "/" +
             req05.body.partName05
@@ -120,7 +120,7 @@ module.exports = {
               updatePartsbody05.transactionId05 = trasnsactionId;
               console.log(updatePartsbody05);
               let prepareYMsg = await putData05(
-                "http://projectcloud-env.eba-6saqrkmu.us-east-1.elasticbeanstalk.com/updateParts",
+                "http://projectcloud-XXX.us-east-1.elasticbeanstalk.com/updateParts",
                 updatePartsbody05
               );
               let updateCapacity05 = {};
@@ -130,7 +130,7 @@ module.exports = {
 
               console.log(updateCapacity05);
               let prepareXMsg = await postData05(
-                "http://129.173.67.179:1337/capacityChange",
+                "http://129.XXX.XX.XXX:XXXX/capacityChange",
                 updateCapacity05
               );
 
@@ -168,11 +168,11 @@ module.exports = {
                 commitBody.result05 = "commit";
                 commitBody.result = "commit";
                 await postData05(
-                  "http://projectcloud-env.eba-6saqrkmu.us-east-1.elasticbeanstalk.com/response",
+                  "http://projectcloud-env.XXX.us-east-1.elasticbeanstalk.com/response",
                   commitBody
                 );
                 await postData05(
-                  "http://129.173.67.179:1337/capacityFinalize",
+                  "http://129.XXX.XX.XXX:XXXX/capacityFinalize",
                   commitBody
                 );
                 await sails
@@ -186,12 +186,12 @@ module.exports = {
                 partOrdersPost.transactionId05 = trasnsactionId;
 
                 await postData05(
-                  "https://e0o6yn652b.execute-api.us-east-1.amazonaws.com/Dev/addsuccessjobs",
+                  "https://XXX.execute-api.us-east-1.amazonaws.com/Dev/addsuccessjobs",
                   partOrdersPost
                 );
 
                 await postData05(
-                  "https://v8nlkn60v2.execute-api.us-east-1.amazonaws.com/DEV/createsuccessjobs",
+                  "https://XXX.execute-api.us-east-1.amazonaws.com/DEV/createsuccessjobs",
                   partOrdersPost
                 );
 
@@ -205,11 +205,11 @@ module.exports = {
                 rollBackBody.result05 = "rollback";
                 rollBackBody.result = "rollback";
                 await postData05(
-                  "http://projectcloud-env.eba-6saqrkmu.us-east-1.elasticbeanstalk.com/response",
+                  "http://projectcloud-env.XXX.us-east-1.elasticbeanstalk.com/response",
                   rollBackBody
                 );
                 await postData05(
-                  "http://129.173.67.179:1337/capacityFinalize",
+                  "http://129.XXX.XX.XXX:XXXX/capacityFinalize",
                   rollBackBody
                 );
                 await sails
@@ -280,7 +280,7 @@ module.exports = {
         increase.partId05 = req05.body.partId05;
         increase.userId05 = userid;
         await postData05(
-          "http://projectcloud-env.eba-6saqrkmu.us-east-1.elasticbeanstalk.com/requestqohupdate",
+          "http://projectcloud-env.XXX.us-east-1.elasticbeanstalk.com/requestqohupdate",
           increase
         );
         res05.view("pages/redirect", {

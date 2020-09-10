@@ -22,7 +22,7 @@ module.exports = {
   //  This function will view the data that retrieved through GET Operation in web page.
   viewCarData05: async function getview05(req05, res05) {
     let response05 = await getData05(
-      "https://v8nlkn60v2.execute-api.us-east-1.amazonaws.com/DEV/getjobslist"
+      "https://XXX.execute-api.us-east-1.amazonaws.com/DEV/getjobslist"
     );
     console.log(response05);
     if (!response05) {
@@ -56,12 +56,12 @@ module.exports = {
 
   jobNameSearchUI: async function jobnamesearchui(req05, res05) {
     let response05 = await getData05(
-      "https://v8nlkn60v2.execute-api.us-east-1.amazonaws.com/DEV/getjobslist"
+      "https://XXX.execute-api.us-east-1.amazonaws.com/DEV/getjobslist"
     );
     const request = require("request");
 
     request.post(
-      "https://sft5ksxqae.execute-api.us-east-1.amazonaws.com/dev/helloapi",
+      "https://XXX.execute-api.us-east-1.amazonaws.com/dev/helloapi",
       {
         json: {
           jobName05: req05.body.jobName05,

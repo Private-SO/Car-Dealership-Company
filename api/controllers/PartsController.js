@@ -20,9 +20,7 @@ async function getData05(url) {
 
 module.exports = {
   viewParts: async function viewparts(req05, res05) {
-    let responseJobs05 = await getData05(
-      "https://v8nlkn60v2.execute-api.us-east-1.amazonaws.com/DEV/getjobslist"
-    );
+    let responseJobs05 = await getData05("URL");
     let partData05 = [];
     if (responseJobs05) {
       let jobName05 = req05.params.jobName05;
@@ -35,9 +33,7 @@ module.exports = {
       res05.send("Cannot find anything to show!");
     }
     console.log(partData05);
-    let responseParts05 = await getData05(
-      "http://projectcloud-env.eba-6saqrkmu.us-east-1.elasticbeanstalk.com/getParts"
-    );
+    let responseParts05 = await getData05("URL");
 
     if (responseParts05) {
       console.log(responseParts05);
